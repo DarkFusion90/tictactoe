@@ -88,7 +88,7 @@ function analyzeHorizontalVictory() {
     }
   }
 
-  //scenario two: second column matches
+  //scenario two: second columnmatches
   point1 = document.getElementById("four").innerHTML.toString();
   point2 = document.getElementById("five").innerHTML.toString();
   point3 = document.getElementById("six").innerHTML.toString();
@@ -99,7 +99,7 @@ function analyzeHorizontalVictory() {
     }
   }
 
-  //scenario three: third column matches
+  //scenario three: third row matches
   point1 = document.getElementById("seven").innerHTML.toString();
   point2 = document.getElementById("eight").innerHTML.toString();
   point3 = document.getElementById("nine").innerHTML.toString();
