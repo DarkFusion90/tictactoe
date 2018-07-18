@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!--import the font: Lobster-->
+  <link rel="stylesheet" type="text/css" href="main-TicTac.css">
+  <meta name="viewport" width="device-width" initial-scale="1.0">
+  <title>Tic Tac Toe!</title>
+</head>
+<script src="main-JS.js" type="text/javascript" lang="javascript"></script>
+
+<body>
+  <p id="header-text">TicTacToe!</p>
+
+  <div id="dialog" class="victory_dialog">
+    <div class="dialog-content">
+      <p class="dialog_message" , id="message"></p>
+      <p id="winner-name-message" class="dialog_message"></p>
+      <span id="restart-button" onclick="document.location.reload();">Play Again</span>
+      <br>
+      <br>
+      <span id="exit-button" onclick="window.close();">Exit</span>
+    </div>
+  </div>
+
+  <div id="playground">
+    <div class="play-block" onclick='print_Cross_or_Zero("one");'>
+      <p class="cross-or-zero" id="one"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("two");'>
+      <p class="cross-or-zero" id="two"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("three");'>
+      <p class="cross-or-zero" id="three"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("four");'>
+      <p class="cross-or-zero" id="four"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("five");'>
+      <p class="cross-or-zero" id="five"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("six");'>
+      <p class="cross-or-zero" id="six"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("seven");'>
+      <p class="cross-or-zero" id="seven"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("eight");'>
+      <p class="cross-or-zero" id="eight"></p>
+    </div>
+    <div class="play-block" onclick='print_Cross_or_Zero("nine");'>
+      <p class="cross-or-zero" id="nine"></p>
+    </div>
+  </div>
+</body>
+
+</html>
