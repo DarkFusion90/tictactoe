@@ -1,13 +1,21 @@
-
 body{
   background: hsl(202, 80%, 22%);
 }
 
+#game-and-table{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 #header-text{
+  position: sticky;
+  top: 0;
+  color:hsl(120, 97%, 55%);
+  background-color: inherit;
   padding: 15px;
   margin-top: 20px;
   text-align: center;
-  color:hsl(120, 97%, 55%);
   font-family: 'Lobster', cursive;
   font-size: 70px;
   letter-spacing: 5px;
@@ -41,7 +49,7 @@ body{
   width: 140px;
   height: 140px;  
   transition: linear;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
 .play-block:hover{
@@ -58,7 +66,7 @@ body{
   color: #53df66fd;
 }
 
-.victory_dialog{
+.victory_dialog, #enter-names-dialog{
   display: none;
   z-index: 1;
   position: fixed;
@@ -71,7 +79,7 @@ body{
   height: 100%;
 }
 
-.dialog-content{
+.dialog-content , #enter-names-dialog-content{
   position: relative;
   color: rgba(104, 255, 247, 0.966);
   background-color: hsl(200, 70%, 30%);
@@ -83,7 +91,7 @@ body{
   text-align: center;
   box-shadow: 1px 1px 4px 1px hsl(206, 100%, 60%);
   animation-name: animatetop;
-  animation-duration: 0.6s;
+  animation-duration: 0.8s;
   animation-timing-function: ease-out;
 }
 
@@ -94,7 +102,7 @@ body{
   to {top:0; opacity:1}
 }
 
-#restart-button, #exit-button{
+#restart-button, #exit-button , #play-button , #skip-button{
   border: 1px solid #000000;
   border-radius: 4px;
   background-color: hsl(120, 100%, 40%);
@@ -104,19 +112,35 @@ body{
   color: black;
 }
 
-#restart-button{
+#restart-button , #skip-button{
   bottom: 10px;
   left: 15px;
 }
 
-#exit-button{
+#exit-button , #play-button{
   bottom: 10px;
   right: 15px;
 }
 
-#restart-button:hover , #exit-button:hover{
+#skip-button{
+  background-color: hsl(0, 100%, 47%); 
+  color: white;
+}
+
+#restart-button:hover , #exit-button:hover , #play-button:hover , #play-button:focus{
   box-shadow: 2px 2px 8px 3px hsl(118, 92%, 47%);
   cursor: pointer;
+}
+
+#skip-button:hover , #skip-button:focus{
+  box-shadow: 2px 2px 8px 3px hsl(0, 100%, 50%);
+  cursor: pointer;
+}
+
+#enter-name-message{
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1px;
 }
 
 .dialog-message{
@@ -139,3 +163,49 @@ body{
   margin-bottom: 2px;
 }
 
+#table-div{
+  padding-left: 50px;
+  border-left: 3px solid hsl(36, 94%, 44%);
+  margin: 100px auto 200px 50px;
+}
+
+table, th, td{
+  border: 2px solid hsl(118, 85%, 60%);
+  border-collapse: collapse;
+}
+
+.table-header, .round-td, .players-score-td{
+  color: white;
+  padding: 20px 40px 20px 40px;
+}
+
+.players-score-td{
+  font-size: 30px;
+}
+
+input, label{
+  margin: 10px;
+  padding: 5px;
+}
+
+input{
+  border-radius: 6px;
+  border-style: solid;
+  border: 1px solid hsl(120, 97%, 55%);
+}
+
+input:focus{
+  box-shadow: -0.5px 0.5px 1.5px 1px hsl(120, 97%, 55%);
+}
+
+#main-form{
+  text-align: left;
+  margin: 10px 20px 15px 20px;
+  padding: 10px 30px 15px 30px;
+}
+
+#player1-form, #player2-form{
+  margin: 10px;
+  display: flex;
+  justify-content: left;
+}
