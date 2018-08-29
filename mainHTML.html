@@ -2,56 +2,129 @@
 <html>
 
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!--import the font: Lobster-->
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <!--import the font: Lobster-->
   <link rel="stylesheet" type="text/css" href="main-TicTac.css">
-  <meta name="viewport" width="device-width" initial-scale="1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Tic Tac Toe!</title>
 </head>
 <script src="main-JS.js" type="text/javascript" lang="javascript"></script>
+<script>
+  function showBox() {
+    document.getElementById("enter-names-dialog").style.display = "block";
+  }
+</script>
 
-<body>
+<body onload="showBox()">
+
   <p id="header-text">TicTacToe!</p>
-
-  <div id="dialog" class="victory_dialog">
-    <div class="dialog-content">
-      <p class="dialog_message" , id="message"></p>
-      <p id="winner-name-message" class="dialog_message"></p>
-      <span id="restart-button" onclick="document.location.reload();">Play Again</span>
-      <br>
-      <br>
-      <span id="exit-button" onclick="window.close();">Exit</span>
+  <div id="enter-names-dialog" style="display: none">
+    <div id="enter-names-dialog-content">
+      <strong>
+        <p id="enter-name-message">
+          You might want to enter your names...
+          <br> It's more fun seeing your name in the list! &#x263A
+        </p>
+      </strong>
+      <div id="main-form">
+        <form>
+          <div id="player1-form">
+            <label for="player1_name">Name (Player 1): </label>
+            <br>
+            <input type="text" id="player1_name" name="player1_name" autofocus tabindex="1" placeholder="Eg. Jack">
+          </div> 
+          <div id="player2-form">
+            <label for="player2_name">Name (Player 2): </label>
+            <br>
+            <input type="text" id="player2_name" name="player2_name" tabindex="2" placeholder="Eg. John">
+          </div>
+        </form>
+      </div>
+      <span id="play-button" onclick= 'registerPlayers("play")' tabindex="4" >Play!</span>
+      <span id="skip-button" onclick= 'registerPlayers("skip")' tabindex="3" >Skip</span>
     </div>
   </div>
 
-  <div id="playground">
-    <div class="play-block" onclick='print_Cross_or_Zero("one");'>
-      <p class="cross-or-zero" id="one"></p>
+  <div id="game-and-table">
+    <div id="dialog" class="victory_dialog">
+      <div class="dialog-content">
+        <p class="dialog_message" , id="message"></p>
+        <p id="winner-name-message" class="dialog_message"></p>
+        <span id="restart-button" onclick="document.location.reload();">Play Again</span>
+        <br>
+        <br>
+        <span id="exit-button" onclick="open(location, '_self').close();">Exit</span>
+      </div>
     </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("two");'>
-      <p class="cross-or-zero" id="two"></p>
+
+    <div id="playground">
+      <div class="play-block" onclick='print_Cross_or_Zero("one");'>
+        <p class="cross-or-zero" id="one"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("two");'>
+        <p class="cross-or-zero" id="two"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("three");'>
+        <p class="cross-or-zero" id="three"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("four");'>
+        <p class="cross-or-zero" id="four"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("five");'>
+        <p class="cross-or-zero" id="five"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("six");'>
+        <p class="cross-or-zero" id="six"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("seven");'>
+        <p class="cross-or-zero" id="seven"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("eight");'>
+        <p class="cross-or-zero" id="eight"></p>
+      </div>
+      <div class="play-block" onclick='print_Cross_or_Zero("nine");'>
+        <p class="cross-or-zero" id="nine"></p>
+      </div>
     </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("three");'>
-      <p class="cross-or-zero" id="three"></p>
-    </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("four");'>
-      <p class="cross-or-zero" id="four"></p>
-    </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("five");'>
-      <p class="cross-or-zero" id="five"></p>
-    </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("six");'>
-      <p class="cross-or-zero" id="six"></p>
-    </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("seven");'>
-      <p class="cross-or-zero" id="seven"></p>
-    </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("eight");'>
-      <p class="cross-or-zero" id="eight"></p>
-    </div>
-    <div class="play-block" onclick='print_Cross_or_Zero("nine");'>
-      <p class="cross-or-zero" id="nine"></p>
+
+    <div id="table-div">
+      <table>
+        <tr>
+          <td class="table-header">Round:</td>
+          <td class="table-header" id="player1-header">Player 1:</td>
+          <td class="table-header" id="player2-header">Player 2:</td>
+        </tr>
+
+        <tr class="table-contents-row">
+          <td class="round-td">1.</td>
+          <td class="players-score-td player1-scores"></td>
+          <td class="players-score-td player2-scores"></td>
+        </tr>
+        <tr class="table-contents-row">
+          <td class="round-td">2.</td>
+          <td class="players-score-td player1-scores"></td>
+          <td class="players-score-td player2-scores"></td>
+        </tr>
+        <tr class="table-contents-row">
+          <td class="round-td">3.</td>
+          <td class="players-score-td player1-scores"></td>
+          <td class="players-score-td player2-scores"></td>
+        </tr>
+        <tr class="table-contents-row">
+          <td class="round-td">4.</td>
+          <td class="players-score-td player1-scores"></td>
+          <td class="players-score-td player2-scores"></td>
+        </tr>
+        <tr class="table-contents-row">
+          <td class="round-td">5.</td>
+          <td class="players-score-td player1-scores"></td>
+          <td class="players-score-td player2-scores"></td>
+        </tr>
+
+      </table>
     </div>
   </div>
+
 </body>
 
 </html>
